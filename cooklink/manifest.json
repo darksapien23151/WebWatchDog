@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Enhancer",
+  "version": "1.0",
+  "description": "Enhance privacy by blocking ads, managing cookies, blocking scripts, and protecting against fingerprinting.",
+  "permissions": [
+    "declarativeNetRequest",
+    "cookies"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {
+  "default_popup": "popup.html",
+  "default_icon": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+},
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
